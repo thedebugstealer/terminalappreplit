@@ -8,10 +8,9 @@ cd "$HOME/android-sdk"
 # Download Android command line tools
 wget https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip -O cmdtools.zip
 
-# Extract tools
-unzip cmdtools.zip -d cmdline-tools
+# Extract tools directly into "latest"
 mkdir -p cmdline-tools/latest
-cp -r cmdline-tools/* cmdline-tools/latest/
+unzip cmdtools.zip -d cmdline-tools/latest
 
 # Set environment variables
 export ANDROID_HOME="$HOME/android-sdk"
