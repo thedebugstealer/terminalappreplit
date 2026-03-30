@@ -50,7 +50,7 @@ echo "[MK9] Installing Android SDK components..."
 yes | "$BUILDOZER_SDKMANAGER" --sdk_root="$ANDROID_SDK_ROOT" \
   "platform-tools" \
   "platforms;android-31" \
-  "build-tools;31.0.0"
+  "build-tools;31.0.0" > /dev/null 2>&1
 
 echo "[MK9] Final PATH:"
 echo "$PATH"
