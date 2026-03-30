@@ -65,7 +65,9 @@ jobs:
           wget https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip -O cmdtools.zip
           unzip cmdtools.zip -d cmdline-tools
           mkdir -p cmdline-tools/latest
-          mv cmdline-tools/* cmdline-tools/latest/
+          unzip cmdtools.zip -d cmdline-tools
+         mkdir -p cmdline-tools/latest
+         cp -r cmdline-tools/* cmdline-tools/latest/
 
           export ANDROID_HOME=$HOME/android-sdk
           export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH
