@@ -66,8 +66,8 @@ jobs:
           unzip cmdtools.zip -d cmdline-tools
           mkdir -p cmdline-tools/latest
           unzip cmdtools.zip -d cmdline-tools
-         mkdir -p cmdline-tools/latest
-         cp -r cmdline-tools/* cmdline-tools/latest/
+          mkdir -p cmdline-tools/latest
+          cp -r cmdline-tools/* cmdline-tools/latest/
 
           export ANDROID_HOME=$HOME/android-sdk
           export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH
