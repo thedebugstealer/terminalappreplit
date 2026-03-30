@@ -31,3 +31,5 @@ sdkmanager "platform-tools" \
            "platforms;android-33" \
            "build-tools;33.0.2" \
            "ndk;25.2.9519653"
+           echo "ANDROID_HOME=$ANDROID_HOME" >> $GITHUB_ENV
+           echo "PATH=$PATH" >> $GITHUB_ENV
