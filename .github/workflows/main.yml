@@ -11,7 +11,6 @@ jobs:
       ANDROID_SDK_ROOT: /home/runner/android-sdk
       ANDROID_HOME: /home/runner/android-sdk
       PATH: /home/runner/android-sdk/cmdline-tools/latest/bin:/home/runner/android-sdk/platform-tools:/usr/bin:/bin
-
       BUILDOZER_SDKMANAGER: /home/runner/android-sdk/cmdline-tools/latest/bin/sdkmanager
 
     steps:
