@@ -14,7 +14,7 @@ unzip cmdtools.zip -d cmdline-tools/latest
 
 # Set environment variables
 export ANDROID_HOME="$HOME/android-sdk"
-export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
+export PATH="$ANDROID_HOME/cmdline-tools/latest/cmdline-tools/bin:$ANDROID_HOME/platform-tools:$PATH"
 
 # Accept licenses and install required packages
 yes | sdkmanager --licenses
