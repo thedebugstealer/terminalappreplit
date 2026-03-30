@@ -48,12 +48,11 @@ jobs:
         run: |
           buildozer android debug
 
-      - name: Install system dependencies + Android SDK
+
+      - name: Setup Android SDK
         run: |
-          - name: Setup Android SDK
-        run: |
-         chmod +x scripts/setup_android.sh
-         bash scripts/setup_android.sh
+          chmod +x scripts/setup_android.sh
+          bash scripts/setup_android.sh
 
       - name: Install Buildozer
         run: |
