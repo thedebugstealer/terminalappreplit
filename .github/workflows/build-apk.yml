@@ -19,11 +19,6 @@ jobs:
           chmod +x scripts/setup_android.sh
           bash scripts/setup_android.sh
 
-      - name: Install Buildozer
-        run: |
-          pip install --upgrade pip
-          pip install buildozer cython
-
       - name: Build APK
         run: |
           chmod +x scripts/build_apk.sh
