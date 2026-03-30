@@ -38,12 +38,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: terminalapp-apk
-          path: bin/*.apk      - name: Upload APK artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: terminalapp-apk
-          path: bin/*.apk      - name: Upload APK artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: terminalapp-apk
           path: bin/*.apk
