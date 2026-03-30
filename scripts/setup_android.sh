@@ -8,7 +8,7 @@ sudo apt-get install -y \
     build-essential git zip unzip \
     openjdk-17-jdk \
     libffi-dev libssl-dev \
-    libncurses5 libstdc++6
+    libstdc++6
 
 # Create Android SDK directory
 mkdir -p "$HOME/android-sdk"
