@@ -20,3 +20,5 @@ jobs:
       - name: Install dependencies and build APK
         run: |
           chmod +x scripts/setup_android.sh
+          scripts/setup_android.sh
+          buildozer android debug
