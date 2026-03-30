@@ -1,4 +1,4 @@
-name: Build APK (MK5)
+name: Build APK (MK6)
 
 on:
   workflow_dispatch:
@@ -10,18 +10,15 @@ jobs:
     env:
       ANDROID_SDK_ROOT: /home/runner/android-sdk
       ANDROID_HOME: /home/runner/android-sdk
-      PATH: /home/runner/android-sdk/cmdline-tools/latest/bin:/home/runner/android-sdk/platform-tools:/usr/bin:/bin
-      BUILDOZER_SDKMANAGER: /home/runner/android-sdk/cmdline-tools/latest/bin/sdkmanager
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Android & Buildozer (MK5)
+      - name: Setup Android & Buildozer (MK6)
         run: |
           chmod +x scripts/setup_android.sh
           scripts/setup_android.sh
 
       - name: Build APK
-        run: |
-          buildozer android debug
+        run: buildozer android debug
