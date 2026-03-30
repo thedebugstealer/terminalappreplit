@@ -17,13 +17,17 @@ cd "$HOME/android-sdk"
 # Download Android command line tools
 wget https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip -O cmdtools.zip
 
-# Extract tools directly into "latest"
-mkdir -p cmdline-tools/latest
-unzip cmdtools.zip -d cmdline-tools/latest
+# Extract tools into correct structure
+mkdir -p cmdline-tools
+unzip cmdtools.zip -d cmdline-tools
 
-# Set environment variables
+# Move into the expected "latest" folder
+mkdir -p cmdline-tools/latest
+mv cmdline-tools/cmdline-tools/* cmdline-tools/latest/
+
+# Set environment variables for this script
 export ANDROID_HOME="$HOME/android-sdk"
-export PATH="$ANDROID_HOME/cmdline-tools/latest/cmdline-tools/bin:$ANDROID_HOME/platform-tools:$PATH"
+export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
 
 # Install required Android components
 yes | sdkmanager --licenses
@@ -31,5 +35,7 @@ sdkmanager "platform-tools" \
            "platforms;android-33" \
            "build-tools;33.0.2" \
            "ndk;25.2.9519653"
+
+# Persist environment variables for next GitHub Actions steps
 echo "ANDROID_HOME=$ANDROID_HOME" >> $GITHUB_ENV
 echo "PATH=$PATH" >> $GITHUB_ENV
