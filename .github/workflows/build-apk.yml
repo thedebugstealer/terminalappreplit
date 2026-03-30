@@ -48,11 +48,27 @@ jobs:
         run: |
           buildozer android debug
 
-      - name: Upload APK artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: terminalapp-apk
-          path: bin/*.apk          export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH
+      - name: Install system dependencies + Android SDK
+        run: |
+          sudo apt update
+          sudo apt install -y \
+            python3 python3-pip python3-setuptools \
+            git zip unzip openjdk-17-jdk \
+            libffi-dev libssl-dev \
+            liblzma-dev libjpeg-dev libpng-dev \
+            libgl1-mesa-dev libgles2-mesa-dev \
+            libsqlite3-dev zlib1g-dev
+
+          mkdir -p $HOME/android-sdk
+          cd $HOME/android-sdk
+
+          wget https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip -O cmdtools.zip
+          unzip cmdtools.zip -d cmdline-tools
+          mkdir -p cmdline-tools/latest
+          mv cmdline-tools/* cmdline-tools/latest/
+
+          export ANDROID_HOME=$HOME/android-sdk
+          export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH
 
           yes | sdkmanager --licenses
           sdkmanager "platform-tools" "platforms;android-33" "build-tools;33.0.2"
@@ -67,10 +83,6 @@ jobs:
           buildozer android debug
 
       - name: Upload APK artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: terminalapp-apk
-          path: bin/*.apk      - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: terminalapp-apk
