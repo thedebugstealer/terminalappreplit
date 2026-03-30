@@ -1,4 +1,4 @@
-name: Build APK (MK4)
+name: Build APK (MK5)
 
 on:
   workflow_dispatch:
@@ -17,11 +17,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Android & Buildozer (MK4)
+      - name: Setup Android & Buildozer (MK5)
         run: |
           chmod +x scripts/setup_android.sh
           scripts/setup_android.sh
 
-      - name: Build APK with Buildozer
+      - name: Build APK
         run: |
           buildozer android debug
