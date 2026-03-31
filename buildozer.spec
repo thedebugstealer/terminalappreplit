@@ -14,9 +14,11 @@ android.ndk_api = 21
 log_level = 2
 android.accept_sdk_license = True
 
-# >>> THE REAL OMEGA OVERRIDES (Buildozer actually reads these) <<<
+# SDK overrides
 android.sdk_path = /home/runner/android-sdk
 android.android_sdk = /home/runner/android-sdk
 android.sdkmanager_path = /home/runner/android-sdk/cmdline-tools/latest/bin/sdkmanager
 android.sdkmanager = /home/runner/android-sdk/cmdline-tools/latest/bin/sdkmanager
-# <<< END OMEGA OVERRIDES >>>
+
+# THE CRITICAL FIX
+android.build_tools_version = 33.0.2
