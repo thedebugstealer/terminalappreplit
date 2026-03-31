@@ -8,10 +8,14 @@ version = 1.0
 requirements = python3,kivy,kivymd
 orientation = portrait
 fullscreen = 0
+
+# 🔧 Android SDK / tools (match our setup script)
 android.sdk_path = /home/runner/android-sdk
-android.ndk_path = /home/runner/android-sdk/ndk/25.2.9519653
+android.android_sdk = /home/runner/android-sdk
 android.sdkmanager = /home/runner/android-sdk/cmdline-tools/latest/bin/sdkmanager
 android.sdkmanager_path = /home/runner/android-sdk/cmdline-tools/latest/bin/sdkmanager
+
+# Let Buildozer download/manage NDK itself; we only pin the API level
 android.ndk_api = 21
 
 [buildozer]
